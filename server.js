@@ -12,9 +12,5 @@ app.use(cors())
 app.use(express.json())
 app.use(require('./router.js'))
 
-//Routes
-
-
-
 //Start server
 app.listen(port, () => console.log("Server started on port " + port))

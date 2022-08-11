@@ -5,6 +5,10 @@ const Puzzle = require('./models/puzzleModel.js')
 const router = express.Router()
 
 //Routes
+router.get('/', (req, res) => {
+    res.status(200).send("Server is up and running")
+})
+
 router.post('/mosaic', async (req, res) => {
     const puzzle = await Puzzle.findOneAndRemove({type:'mosaic', size:req.body.size, difficulty:req.body.difficulty});
     res.status(200).json(puzzle)
